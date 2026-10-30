@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "main": "electron/main.cjs",
+  "engines": {
+    "node": ">=22.x"
+  },
   "scripts": {
     "dev:frontend": "vite",
     "dev:backend": "node server/index.js",

@@ -442,13 +442,17 @@ app.get('/api/reports/dashboard', (req, res) => {
   }
 });
 
-// Fallback to React index.html for all non-API routes
-app.get('*', (req, res) => {
-  if (!req.path.startsWith('/api')) {
-    res.sendFile(path.join(distPath, 'index.html'));
-  }
-});
+// Fallback to React index.html for all non-API routes (when not on Vercel)
+if (!process.env.VERCEL) {
+  app.get('*', (req, res) => {
+    if (!req.path.startsWith('/api')) {
+      res.sendFile(path.join(distPath, 'index.html'));
+    }
+  });
 
-app.listen(PORT, () => {
-  console.log(`[POS SERVER] Running offline on http://localhost:${PORT}`);
-});
+  app.listen(PORT, () => {
+    console.log(`[POS SERVER] Running offline on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
