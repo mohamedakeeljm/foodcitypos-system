@@ -854,7 +854,7 @@ export default function FastBilling({ settings, onInvoiceComplete }) {
                     <div>
                       <div className="flex justify-between items-center mb-1">
                         <label className="text-xs text-slate-600 dark:text-slate-400 font-bold block">
-                          Cash Received from Customer (வாங்கிய பணம்)
+                          Cash Received from Customer
                         </label>
                         <button
                           type="button"
@@ -905,7 +905,7 @@ export default function FastBilling({ settings, onInvoiceComplete }) {
                     {/* Cash Denominations Add Buttons */}
                     <div>
                       <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1">
-                        Add Notes (+ நோட்டுகள்):
+                        Add Currency Notes:
                       </span>
                       <div className="grid grid-cols-4 gap-1.5">
                         {[100, 500, 1000, 2000].map((note) => (
@@ -916,7 +916,7 @@ export default function FastBilling({ settings, onInvoiceComplete }) {
                               const curr = parseFloat(cashTendered) || 0;
                               setCashTendered(String(curr + note));
                             }}
-                            className="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 py-1.5 rounded-lg text-xs font-mono font-bold text-slate-600 dark:text-slate-300 active:scale-95 transition-all shadow-sm"
+                            className="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 py-1.5 rounded-lg text-xs font-mono font-bold text-slate-600 dark:text-slate-300 active:scale-95 transition-all"
                           >
                             +{currency}{note}
                           </button>
@@ -942,8 +942,8 @@ export default function FastBilling({ settings, onInvoiceComplete }) {
                             <span className="text-[10px] uppercase tracking-wider font-extrabold text-emerald-700 dark:text-emerald-400 block">
                               Balance / Change to Return
                             </span>
-                            <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold">
-                              (மீதி கொடுக்க வேண்டியது)
+                            <span className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">
+                              Return to customer
                             </span>
                           </div>
                           <span className="text-3xl font-black font-mono text-emerald-600 dark:text-emerald-300">
@@ -956,8 +956,8 @@ export default function FastBilling({ settings, onInvoiceComplete }) {
                             <span className="text-[10px] uppercase tracking-wider font-extrabold text-amber-700 dark:text-amber-400 block">
                               Still Due / Short Amount
                             </span>
-                            <span className="text-xs text-amber-600 dark:text-amber-400 font-bold">
-                              (இன்னும் தர வேண்டிய பணம்)
+                            <span className="text-xs text-amber-600 dark:text-amber-400 font-medium">
+                              Customer needs to pay
                             </span>
                           </div>
                           <span className="text-2xl font-black font-mono text-amber-600 dark:text-amber-400">
