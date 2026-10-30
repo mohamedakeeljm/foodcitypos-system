@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Local SQLite runtime database
+data/pos_database.sqlite*
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
